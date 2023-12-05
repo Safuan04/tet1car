@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='page_icon/tet1car.png') }}">
+    {% if title %}
+        <title>CarRent - {{title}}</title>
+    {% else %}
+        <title>CarRent</title>
+    {% endif %}
+    <style>
+        footer {
+            font-size: small;
+        }
+
+        footer a {
+            color: aliceblue;
+        }
+
+        footer a:hover {
+            color: wheat;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .social-icon img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand logo" href="{{ url_for('landing_page') }}">Tet1Car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                {% if current_user.username == 'Safuan' %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('new_car') }}">New Car</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('new_owner') }}">New Owner</a>
+                </li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('account') }}">Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('sign_up') }}">Sign Up</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="flex-grow-1">
+        <div class="container">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-light pt-3">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-flex-end">
+                <div class="text-center text-md-left mb-3 mb-md-0">
+                    <p>© 2023. All Rights Reserved.</p>
+                </div>
+                <div class="text-center mr-5">
+                    <p>
+                        <a href="{{ url_for('owners') }}">Our Providers </a>|<a href="{{ url_for('about') }}"> About Us</a>
+                    </p>
+                </div>
+                <div class="text-center mb-2">
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <img src="{{ url_for('static', filename='socialmedia_icons/fb1.jpg') }}"
+                            alt="Facebook" class="img-fluid rounded-circle">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ url_for('static', filename='socialmedia_icons/twiter1.jpg') }}"
+                            alt="Twitter" class="img-fluid rounded-circle">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ url_for('static', filename='socialmedia_icons/insta1.jpg') }}"
+                            alt="Instagram" class="img-fluid rounded-circle">
+                        </a>
+                        <a href="#" class="social-icon">
+                            <img src="{{ url_for('static', filename='socialmedia_icons/linkdn1.jpg') }}"
+                            alt="Link-dn" class="img-fluid rounded-circle">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
