@@ -44,13 +44,22 @@ def login():
 
 @app.route("/", strict_slashes=False)
 def landing_page():
-    return render_template('Landing_page.html', title='CarRent - Landing Page')
+    week_car = Car.query.filter_by(id='4').first()
+    cars = Car.query.all()
+    list = [5, 7, 6]
+    car_list = []
+    for car in cars:
+        if car.id in list:
+            car_list.append(car)
+            
+    return render_template('Landing_page.html', title='CarRent - Landing Page', week_car=week_car, car_list=car_list)
 
 @app.route("/home", strict_slashes=False)
 def home():
+    car = Car.query.filter_by(id='4').first()
     cars = Car.query.all()
     owners = Owner.query.all()
-    return render_template('home.html', title='Homepage', cars=cars, owners=owners)
+    return render_template('home.html', title='Homepage', cars=cars, owners=owners, car=car)
 
 @app.route("/logout", strict_slashes=False)
 def logout():

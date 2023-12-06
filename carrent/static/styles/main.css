@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
-body {
+
+/*---------------------------------------------------------------------------------------------*/
+
+.landing_page1 {
     background-image: url('../web_images/10.jpg');
     background-size: cover;
     background-position: center;
 }
 
-body::before {
+.landing_page1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -15,7 +18,6 @@ body::before {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.23);
-    z-index: -1;
 }
 
 .nav-link {
@@ -55,10 +57,140 @@ body::before {
     color: black;
 }
 
+/*---------------------------------------------------------------------------------------------*/
+
+.landing_page2-3 {
+    background: linear-gradient(to bottom, #aaaead, white);
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+.landing_page2_content {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+}
+
+.landing_page2_content .content1 {
+    font-family: 'Montserrat';
+    color: black;
+    width: 50%;
+}
+
+.landing_page2_content .content1 hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 20px 0;
+}
+
+.landing_page2_content #week_car {
+    font-weight: 1000;
+    padding-left: 10px;
+    background: linear-gradient(to right, #747b7a, rgb(125, 111, 70));
+}
+
+.landing_page2_content #week_car a {
+    text-decoration: none;
+    color: black;
+}
+
+.landing_page2 img {
+    border-radius: 5px;
+    width: 440px;
+    box-shadow: 0px 0px 10px #393e46;
+    filter: brightness(0.85);
+}
+
+.landing_page2 img:hover {
+    box-shadow: 0px 0px 15px #393e46;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+.landing_page3_content {
+    padding-top: 50px;
+    margin: 0 50px;
+}
+
+.landing_page3_content .content1 {
+    font-family: 'Montserrat';
+}
+
+.landing_page3_content .content1 h1, h5 {
+    text-align: center;
+}
+
+.landing_page3_content .content1 p {
+    margin-left: 240px;
+}
+
+.landing_page3_content .content1 hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #ccc, #333, #ccc); /* Gradient background */
+    margin: 20px 0;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+.landing_page4_content {
+    padding-top: 50px;
+    margin: 0 50px;
+}
+
+.landing_page4_content .top_cars {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 80px;
+}
+
+.landing_page4_content .top_cars .top_car {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing_page4_content .top_cars .top_car h6 {
+    font-family: 'Montserrat';
+    margin-top: 18px;
+}
+
+
+.landing_page4_content .content1 {
+    font-family: 'Montserrat';
+}
+
+.landing_page4_content .content1 hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #ccc, #333, #ccc); /* Gradient background */
+    margin: 20px 0;
+}
+
+.landing_page4_content .top_cars img {
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 0px 10px #393e46;
+}
+
+.landing_page4_content .top_cars img:hover {
+    box-shadow: 0px 0px 15px #393e46;
+}
+
+.landing_page4_content .top_car a {
+    text-decoration: none;
+    color: #333;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
 footer {
     font-size: small;    
-    color: aliceblue;
-    z-index: 1;
+    color: black;
 }
 
 footer a {

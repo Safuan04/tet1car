@@ -12,27 +12,80 @@
         <title>CarRent</title>
     {% endif %}
 </head>
-<body class="d-flex flex-column min-vh-100 ">
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand logo" href="{{ url_for('home') }}">Tet1Car</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('owners') }}">Our Providers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('sign_up') }}" 
-                    style="color: black;">Get Started</a>
-                </li>
-            </ul>
+<body>
+    <div class="d-flex flex-column min-vh-100 landing_page1">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand logo" href="{{ url_for('home') }}">Tet1Car</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('owners') }}">Our Providers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('sign_up') }}" 
+                        style="color: black;">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="slogan">
+            <h1>THE FUTURE OF MOBILITY IS HERE</h1>
+            <h4>Drive Your Dreams, Rent Your Journey.</h4>
         </div>
-    </nav>
-    <div class="slogan">
-        <h1>THE FUTURE OF MOBILITY IS HERE</h1>
-        <h4>Drive Your Dreams, Rent Your Journey.</h4>
+    </div>
+    <div class="landing_page2-3">
+        <div class="landing_page2">
+            <div class="landing_page2_content">
+                <div class="content1">
+                    <h1>Car of the Week</h1>
+                    <hr>
+                    <p id="week_car"><a href="{{ url_for('reservation', car_id=week_car.id) }}"> {{ week_car.make }} {{ week_car.model }} </a></p>
+                    <p>
+                        Meet the Dacia Duster 2023, our star of the week! Versatile, brrugged, and ready for any adventure – 
+                        this SUV combines style with exceptional performance. Explore urban streets or off-road trails 
+                        effortlessly with its robust build and advanced features. Book your ride today and redefine your 
+                        driving experience!
+                    </p>
+                </div>
+                <div>
+                    <a href="{{ url_for('reservation', car_id=week_car.id) }}"><img src="{{ url_for('static', filename='car_images/' + week_car.img_file) }}" alt="{{ week_car.make }} {{ week_car.model }}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="landing_page4">
+            <div class="landing_page4_content">
+                <div class="content1">
+                    <h2>Top 3 Rental Picks</h2>
+                    <hr>
+                </div>
+                <div class="top_cars">
+                    {% for car in car_list %}
+                    <div class="top_car">
+                        <div><a href="{{ url_for('reservation', car_id=car.id) }}"><img src="{{ url_for('static', filename='car_images/' + car.img_file) }}" alt="{{ car.make }} {{ car.model }}"></a></div>
+                        <div><h6><b><a href="{{ url_for('reservation', car_id=car.id) }}"> {{ car.make }} {{ car.model }} </a></b></h6></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="landing_page3">
+            <div class="landing_page3_content">
+                <div class="content1">
+                    <h1>Your Effortless Journey Starts Here</h1>
+                    <h5>
+                        At <b>tet1car</b>, we redefine convenience and quality in car rentals
+                    </h5>
+                    <hr>
+                    <p><b>Tailored Rides:</b> Find the perfect vehicle for any occasion.</p>
+                    <p><b>Top-notch Fleet:</b> Experience safety and comfort with our well-maintained, quality vehicles.</p>
+                    <p><b>Simple Booking:</b> Effortlessly reserve your ride with our user-friendly platform and flexible options.</p>
+                    <p><b>Support on Standby:</b> Our friendly team is ready to assist, ensuring a smooth rental experience.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer py-2 mt-auto">

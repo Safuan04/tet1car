@@ -2,6 +2,7 @@
 {% block content %}
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 		h1 span {
 			font-family: 'Ephesis', cursive;
@@ -18,6 +19,40 @@
             flex-direction: column;
 			color: whitesmoke;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+		}
+
+		.landing_page2 {
+			padding-top: 50px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.landing_page2 .content1 {
+			font-family: 'Montserrat';
+			color: black;
+			width: 50%;
+		}
+
+		.landing_page2 #week_car {
+			font-weight: 1000;
+			padding-left: 10px;
+			background: linear-gradient(to right, rgb(198, 197, 197), white);
+		}
+
+		.landing_page2 img {
+			border-radius: 5px;
+			width: 440px;
+			box-shadow: 0px 0px 10px #393e46;
+		}
+
+		.landing_page2 img:hover {
+			box-shadow: 0px 0px 15px #393e46;
+		}
+
+		h2 {
+			font-family: 'Montserrat';
+			margin-top: 20px;
 		}
 
 		.card img {
@@ -38,10 +73,28 @@
 			</div>
 		</div>
 	</div>
+	<div class="landing_page2">
+		<div class="content1">
+			<h1>Car of the Week</h1>
+			<hr>
+			<p id="week_car"> {{ car.make }} {{ car.model }} </p>
+			<p>
+				Meet the Dacia Duster 2023, our star of the week! Versatile, brrugged, and ready for any adventure – 
+				this SUV combines style with exceptional performance. Explore urban streets or off-road trails 
+				effortlessly with its robust build and advanced features. Book your ride today and redefine your 
+				driving experience!
+			</p>
+		</div>
+		<div>
+		<a href="{{ url_for('reservation', car_id=car.id) }}"><img src="{{ url_for('static', filename='car_images/' + car.img_file) }}" alt="{{ car.make }} {{ car.model }}"></a>
+		</div>
+	</div>
+	<h2>Discover our range of cars</h2>
+	<hr>
 	<div class="container mt-4">
 		<div class="row">
 			{% for car in cars %}
-				<div class="col-md-4 mb-4">
+				<div class="col-md-3 mb-4">
 					<div class="card">
 						{% if car.img_file %}
 							<img src="{{ url_for('static', filename='car_images/' + car.img_file) }}" class="card-img-top" alt="{{ car.make }} {{ car.model }}">
@@ -54,6 +107,7 @@
 								{% endif %}
 							{% endfor %}
 							<p class="card-text">Year: {{ car.year }}</p>
+							<p class="card-text">Seating: {{ car.Seating }}</p>
 							<p class="card-text">Price: {{ car.daily_price }} dh per day</p>
 							<a href="{{ url_for('reservation', car_id=car.id) }}" class="btn btn-outline-dark">Book</a>
 							{% if current_user.username == 'Safuan' %}
