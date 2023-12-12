@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: carrent_db
 -- ------------------------------------------------------
--- Server version       8.0.34-0ubuntu0.20.04.1
+-- Server version	8.0.34-0ubuntu0.20.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

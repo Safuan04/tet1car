@@ -52,7 +52,7 @@ def landing_page():
         if car.id in list:
             car_list.append(car)
             
-    return render_template('Landing_page.html', title='CarRent - Landing Page', week_car=week_car, car_list=car_list)
+    return render_template('Landing_page.html', title='Landing Page', week_car=week_car, car_list=car_list)
 
 @app.route("/home", strict_slashes=False)
 def home():
