@@ -52,12 +52,14 @@ class UpdateAccountForm(FlaskForm):
     submit = SubmitField('Update')
 
     def validate_username(self, username):
+        """This is a function that checks if the username is already exist"""
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
                 raise ValidationError('Username used. Please choose another one')
 
     def validate_email(self, email):
+        """This is a function that checks if the email is already exist"""
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
@@ -70,6 +72,7 @@ class PostOwnerForm(FlaskForm):
     submit = SubmitField('create')
 
     def validate_name(self, name):
+        """This is a function that checks if the owner name is already exist"""
         owner = Owner.query.filter_by(name=name.data).first()
         if owner:
             raise ValidationError('Name exists. Please choose another one')
@@ -87,6 +90,7 @@ class PostCarForm(FlaskForm):
     submit = SubmitField('Post')
 
     def validate_car_owner(self, car_owner):
+        """This is a function that checks if the owner exists"""
         car_owner = Owner.query.filter_by(name=car_owner.data).first()
         if not car_owner:
             raise ValidationError("Owner doesn't exists")
@@ -98,6 +102,7 @@ class ReservationForm(FlaskForm):
     submit = SubmitField('Book')
 
     def validate_reservation(self):
+        """This is a function that ensures there is no conflicting reservation"""
         start_date = self.start_date.data
         end_date = self.end_date.data
 

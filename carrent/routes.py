@@ -15,6 +15,7 @@ from carrent.models.reservation import Reservation
 
 @app.route("/sign-up", methods=['GET', 'POST'], strict_slashes=False)
 def sign_up():
+    """Creating new user"""
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = SignUpForm()
@@ -29,6 +30,7 @@ def sign_up():
 
 @app.route("/login", methods=['GET', 'POST'], strict_slashes=False)
 def login():
+    """User login route"""
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
@@ -44,6 +46,7 @@ def login():
 
 @app.route("/", strict_slashes=False)
 def landing_page():
+    """Landing page route"""
     week_car = Car.query.filter_by(id='4').first()
     cars = Car.query.all()
     list = [5, 7, 6]
@@ -51,11 +54,12 @@ def landing_page():
     for car in cars:
         if car.id in list:
             car_list.append(car)
-            
+
     return render_template('Landing_page.html', title='Landing Page', week_car=week_car, car_list=car_list)
 
 @app.route("/home", strict_slashes=False)
 def home():
+    """Homepage route"""
     car = Car.query.filter_by(id='4').first()
     cars = Car.query.all()
     owners = Owner.query.all()
@@ -63,11 +67,12 @@ def home():
 
 @app.route("/logout", strict_slashes=False)
 def logout():
+    """Logout route"""
     logout_user()
     return redirect(url_for('login'))
 
 def save_pic(form_pic):
-    """Saving the user profile picture"""
+    """Saving the user profile picture with chosen size"""
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_pic.filename)
     pic_fn = random_hex + f_ext
@@ -83,6 +88,7 @@ def save_pic(form_pic):
 @app.route("/account",  methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def account():
+    """User account route"""
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.pic.data:
@@ -101,7 +107,7 @@ def account():
                            img_file=img_file, form=form )
 
 def save_car_pic(car_pic):
-    """Saving the user profile picture"""
+    """Saving car pictures"""
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(car_pic.filename)
     pic_fn = random_hex + f_ext
@@ -112,6 +118,7 @@ def save_car_pic(car_pic):
 @app.route("/car/new", methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def new_car():
+    """This route funtcion is for posting new cars"""
     if current_user.username == 'Safuan':
         form = PostCarForm()
         if form.validate_on_submit():
@@ -139,6 +146,7 @@ def new_car():
 @app.route("/car/<int:car_id>/update", methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def update_car(car_id):
+    """This route function is for updating cars"""
     if current_user.username == 'Safuan':
         car = Car.query.get_or_404(car_id)
         form = PostCarForm()
@@ -170,7 +178,8 @@ def update_car(car_id):
 @app.route("/reservation/<int:car_id>", methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def reservation(car_id):
-    car = Car.query.get_or_404(car_id) 
+    """This route function is for car reservation"""
+    car = Car.query.get_or_404(car_id)
     owners = Owner.query.all()
     form = ReservationForm()
 
@@ -198,13 +207,14 @@ def reservation(car_id):
 
 @app.route("/owner/<int:owner_id>", strict_slashes=False)
 def owner(owner_id):
+    """This route function is for displaying cars of each owner"""
     owner = Owner.query.get_or_404(owner_id)
     return render_template('owner.html', titel=owner.name, owner=owner)
 
 @app.route("/owner/new", methods=['GET', 'POST'], strict_slashes=False)
 @login_required
 def new_owner():
-    """"""
+    """Creating new owner route"""
     if current_user.username == 'Safuan':
         form = PostOwnerForm()
         if form.validate_on_submit():
@@ -219,9 +229,11 @@ def new_owner():
 
 @app.route("/about", strict_slashes=False)
 def about():
+    """About route"""
     return render_template('about.html', title='About Us')
 
 @app.route("/owners", strict_slashes=False)
 def owners():
+    """This route function is for displaying all owners"""
     owners = Owner.query.all()
     return render_template('owners.html', title='Providers', owners=owners)

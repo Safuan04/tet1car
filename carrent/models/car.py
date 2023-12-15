@@ -2,6 +2,7 @@ from carrent import db
 from datetime import datetime
 
 class Car(db.Model):
+    """This is the car model that interacts with database using SQLAlchemy"""
     id = db.Column(db.Integer ,primary_key=True)
     make = db.Column(db.String(128))
     model = db.Column(db.String(128))

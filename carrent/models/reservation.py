@@ -1,6 +1,7 @@
 from carrent import db
 
 class Reservation(db.Model):
+    """This is the reservation model that interacts with database using SQLAlchemy"""
     id = db.Column(db.Integer ,primary_key=True)
     start_date = db.Column(db.Date)
     end_date = db.Column(db.Date)
