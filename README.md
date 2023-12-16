@@ -8,6 +8,7 @@
 - [Introduction](#introduction)
 - [Setup](#setup)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [Usage](#usage)
 - [Files](#files)
   - [Routes](#routes)
@@ -17,6 +18,7 @@
 ## Introduction
 
 [Tet1car](https://www.safuan04.tech/) is a car rental website and it is an easy-to-use platform for renting cars. You can sign up, log in, and browse through a variety of cars available for rent.
+
 This project  aims to simplify the process of renting vehicles in Tetouan, Morocco. This place is favored by a lot of moroccans and non moroccans specially in summer for its known beaches that need transportation to get to it... That's where this project comes handy where it provides an accessible platform for users to browse, book, and rent cars for their transportation needs.
 
 ## Setup
@@ -43,6 +45,15 @@ To run this project locally, follow these steps:
 - Owner management (add new owners, view owner details)
 - Reservation system
 
+## Tech Stack
+
+- **Flask**: Python-based web framework used for backend development.
+- **SQLAlchemy**: Python SQL toolkit and Object-Relational Mapping (ORM) used for database operations.
+- **Flask-Login**: Flask extension for managing user sessions and authentication.
+- **MySQL**: Database management system used to store application data.
+- **HTML/CSS**: Frontend technologies for structuring and styling web pages.
+- **Jinja2**: Templating engine used with Flask for dynamic content.
+
 ## Usage
 
 Upon launching the application, users can:
@@ -51,7 +62,7 @@ Upon launching the application, users can:
 - Explore available cars on the landing page.
 - View car details and make reservations.
 - Update their account details and profile picture.
-- Owners (specifically 'Safuan') can post new cars and manage existing listings.
+- The owner of the website can post new cars and manage existing listings.
 
 ## Files
 
