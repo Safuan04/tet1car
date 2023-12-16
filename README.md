@@ -13,13 +13,11 @@
   - [Routes](#routes)
   - [Forms](#forms)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
 [Tet1car](https://www.safuan04.tech/) is a car rental website and it is an easy-to-use platform for renting cars. You can sign up, log in, and browse through a variety of cars available for rent.
-This project  aims to simplify the process of renting vehicles in Tetouan, Morocco. This place is favored by a lot of moroccans and non moroccans specially in summer for its known beaches that need transportation to get to it
-and that's where this project comes handy where It provides an accessible platform for users to browse, book, and rent cars for their transportation needs
+This project  aims to simplify the process of renting vehicles in Tetouan, Morocco. This place is favored by a lot of moroccans and non moroccans specially in summer for its known beaches that need transportation to get to it... That's where this project comes handy where it provides an accessible platform for users to browse, book, and rent cars for their transportation needs.
 
 ## Setup
 
@@ -110,7 +108,3 @@ Folder containing database models:
 ## Contributing
 
 Contributions to improve this project are welcome. Feel free to fork the repository, make changes, and create a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
