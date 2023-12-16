@@ -17,13 +17,15 @@
 
 ## Introduction
 
-CarRent is a car rental platform built using Flask, providing users with the ability to sign up, log in, rent cars, and manage their accounts. 
+[Tet1car](https://www.safuan04.tech/) is a car rental website and it is an easy-to-use platform for renting cars. You can sign up, log in, and browse through a variety of cars available for rent.
+This project  aims to simplify the process of renting vehicles in Tetouan, Morocco. This place is favored by a lot of moroccans and non moroccans specially in summer for its known beaches that need transportation to get to it
+and that's where this project comes handy where It provides an accessible platform for users to browse, book, and rent cars for their transportation needs
 
 ## Setup
 
 To run this project locally, follow these steps:
 
-1. Clone this repository.
+1. Clone this repository. https://github.com/Safuan04/tet1car
 2. Install the necessary dependencies by running:
     ```bash
     pip install -r requirements.txt
