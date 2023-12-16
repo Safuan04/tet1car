@@ -10,8 +10,8 @@
 - [Features](#features)
 - [Usage](#usage)
 - [Files](#files)
-- [Models](#models)
-- [Forms](#forms)
+  - [Routes](#routes)
+  - [Forms](#forms)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -63,27 +63,27 @@ This file contains the Flask application setup and runs the server.
 
 This file contains all the routes and view functions of the application.
 
+#### Routes
+
+The routes file (`routes.py`) contains all the routes and view functions of the application. Here are some of the main routes:
+
+- `/sign-up`: Handles user sign-up functionality.
+- `/login`: Manages user login and authentication.
+- `/`: Landing page displaying available cars.
+- `/home`: User homepage displaying cars and owners.
+- `/logout`: Logs out the current user.
+- `/account`: Manages user account details and profile picture.
+- `/car/new`: Allows posting new cars (restricted to specific users).
+- `/car/<int:car_id>/update`: Enables updating existing car details.
+- `/reservation/<int:car_id>`: Manages car reservation functionality.
+- `/owner/<int:owner_id>`: Displays owner details.
+- `/owner/new`: Allows adding new owners (restricted to specific users).
+- `/about`: Displays information about the application.
+- `/owners`: Lists all owners.
+
 ### `forms.py`
 
 Contains classes defining various forms used in the application.
-
-### `models/`
-
-Folder containing database models:
-
-- `car.py`
-- `owner.py`
-- `reservation.py`
-- `user.py`
-
-## Models
-
-The models represent database tables:
-
-- `Car`: Represents car details and availability.
-- `Owner`: Stores details of car owners.
-- `Reservation`: Holds reservation details.
-- `User`: Represents user information.
 
 ## Forms
 
@@ -95,6 +95,15 @@ Forms used for user interactions:
 - `PostOwnerForm`
 - `PostCarForm`
 - `ReservationForm`
+
+### `models/`
+
+Folder containing database models:
+
+- `car.py`
+- `owner.py`
+- `reservation.py`
+- `user.py`
 
 ## Contributing
 
