@@ -11,8 +11,7 @@
 - [Tech Stack](#tech-stack)
 - [Usage](#usage)
 - [Files](#files)
-  - [Routes](#routes)
-  - [Forms](#forms)
+- [Acknowledgment](#acknowledgment)
 - [Contributing](#contributing)
 
 ## Introduction
@@ -115,6 +114,22 @@ Folder containing database models:
 - `owner.py`
 - `reservation.py`
 - `user.py`
+
+## Acknowledgment
+
+I would like to express my gratitude to the following individuals and resources for their contributions, inspiration, and support throughout the development of Tet1Car:
+
+###Individuals
+- [Adil](https://github.com/Elbadil): My cousin who worked on his own project alongside mine. We shared knowledge and supported each other through challenges. Adil's unwavering dedication and hard work have been a constant source of inspiration.
+
+### Resources
+
+- **[Flask Tutorial Youtube Playlist by: Corey Schafer](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&ab_channel=CoreySchafer)**
+- **[DigitalOcean: How To Serve Flask Applications with Gunicorn and Nginx](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-16-04)**
+- **[ChatGPT](https://chat.openai.com/)**
+
+I extend my thanks to everyone who has contributed in any way to the development and success of this project.
+
 
 ## Contributing
 
