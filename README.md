@@ -79,12 +79,12 @@ The routes file (`routes.py`) contains all the routes and view functions of the 
 
 - `/sign-up`: Handles user sign-up functionality.
 - `/login`: Manages user login and authentication.
-- `/`: Landing page displaying available cars.
+- `/`: Displaying the Landing page.
 - `/home`: User homepage displaying cars and owners.
 - `/logout`: Logs out the current user.
 - `/account`: Manages user account details and profile picture.
 - `/car/new`: Allows posting new cars (restricted to specific users).
-- `/car/<int:car_id>/update`: Enables updating existing car details.
+- `/car/<int:car_id>/update`: Enables updating existing car details (restricted to specific users).
 - `/reservation/<int:car_id>`: Manages car reservation functionality.
 - `/owner/<int:owner_id>`: Displays owner details.
 - `/owner/new`: Allows adding new owners (restricted to specific users).
