@@ -119,7 +119,7 @@ Folder containing database models:
 
 I would like to express my gratitude to the following individuals and resources for their contributions, inspiration, and support throughout the development of Tet1Car:
 
-###Individuals
+### Individuals
 - [Adil](https://github.com/Elbadil): My cousin who worked on his own project alongside mine. We shared knowledge and supported each other through challenges. Adil's unwavering dedication and hard work have been a constant source of inspiration.
 
 ### Resources
